@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Strona główna{% endblock %}</title>
+    <title>{% block title %} Strona główna {% endblock %}</title>
 </head>
 <body>
     <div class="container">
         {% block content %}
         <p>Strona Główna</p>
-        <a href="{% url 'inh_view' %}"><p>Link do inherited</p></a>
+        <a href="{% url 'add_tweet' %}">Add tweet</a>
+        <br><br>
+        {% for tweet in tweets %}
+        <table>
+                <td>{{ tweet.content }}</td>
+                <td>{{ tweet.user }}</td>
+                <td>{{ tweet.creation_date }}</td>
+        </table><br>
+        {% endfor %}
         {% endblock %}
     </div>
 </body>
