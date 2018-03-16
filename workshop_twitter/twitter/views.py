@@ -8,3 +8,8 @@ from django.views import View
 class BaseView(View):
     def get(self, request):
         return render(request, "base.html", {})
+
+
+class InheritView(View):
+    def get(self, request):
+        return render(request, "son_of_base.html", {})

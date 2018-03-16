@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-from twitter.views import BaseView
+from twitter.views import BaseView, InheritView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', BaseView.as_view(), name="base_view"),
+    url(r'^inherit$', InheritView.as_view(), name="inh_view"),
 
 ]
